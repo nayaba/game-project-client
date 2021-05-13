@@ -1,6 +1,6 @@
 ### Wireframe
 
-![tic tac toe wireframe](https://imgur.com/a/m7dbfyp)
+![tic tac toe wireframe](https://i.imgur.com/sBlLhbX.png)
 
 ### User Stories
 
