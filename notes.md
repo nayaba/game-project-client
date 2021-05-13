@@ -39,3 +39,17 @@ npm install
 git add package-lock.json
 git commit
 ```
+
+
+----------------------------------------------
+Make sure I have a sign out option when signed in!
+
+hide the tic tac toe board until signed in
+
+version just add sign up and sign in forms straight on the main page
+
+more than 30 minutes open the issue queue
+
+daily stand up (are you blocked on anything)
+
+not being collaborative eats into company time.
