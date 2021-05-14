@@ -4,8 +4,9 @@ const store = require('./../store.js')
 
 const newGameSuccess = function (res) {
   $('#messaging').html(`${res.game}`) // might need to change this to store.game
-  store.game = res.games
+  store.game = res.game
   console.log('store.game' + store.game)
+  console.log('res: ' + res)
 }
 
 const onCell0Success = function (response) {

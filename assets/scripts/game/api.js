@@ -14,10 +14,11 @@ const newGame = function () {
 }
 
 const cell0 = function (cellId, data) {
-  console.log('cellId: ' + cellId + '& data: ' + data)
+  console.log('in api.js')
+  console.log('store.game._id: ' + `${store.game._id}`)
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/games/:id',
+    url: config.apiUrl + '/games/' + `${store.game._id}`,
     headers: { Authorization: `Bearer ${store.user.token}` },
     data: {
       game: {

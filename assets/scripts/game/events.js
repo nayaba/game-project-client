@@ -18,15 +18,24 @@ const onCell0 = function (event) {
   const cellId = event.target.id
   const data = getFormFields(event.target)
 
-  console.log('cellId: ' + cellId + '& data: ' + data)
+  console.log('in event.js')
 
   api.cell0(cellId, data)
-    .then(ui.onBoardClickSuccess)
+    .then(ui.onCell0Success)
     .catch()
   // https://git.generalassemb.ly/ga-wdi-boston/game-project/issues/4165
 }
 
+
+const beth = function (event) {
+  event.preventDefault()
+  const idFromDiv = $(event.target).data('id') // getting id from div for array cell
+
+}
+
+
 module.exports = {
   onNewGame,
-  onCell0
+  onCell0,
+  beth
 }

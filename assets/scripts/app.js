@@ -14,4 +14,6 @@ $(() => {
 
   $('#new-game').on('click', gameEvents.onNewGame)
   $('#0').on('submit', gameEvents.onCell0)
+
+  $('div').on('click', gameEvents.beth)
 })
