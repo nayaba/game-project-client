@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>HTML-CSS-Bootstrap-Layout</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,79 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+        <!-- required 'container' class wrapper for our rows/columns -->
+        <!-- box and alt-color are not bootstrap classes -->
+
+
+        <h1>Tic Tac Taco</h1>
+
+        <div id="before-sign-in">
+
+            <section>
+              <h3>Sign Up</h3>
+              <form id="sign-up">
+                <input name="credentials[email]" required type="text" placeholder="an@example.email">
+                <input name="credentials[password]" required type="password" placeholder="password">
+                <input name="credentials[password_confirmation]" required type="password" placeholder="password">
+                <button type="submit">Sign Up</button>
+              </form>
+            </section>
+
+            <p>
+
+            <section>
+              <h3>Sign In</h3>
+              <form id="sign-in">
+                <input name="credentials[email]" type="text" placeholder="an@example.email">
+                <input name="credentials[password]" type="password" placeholder="an example password">
+                <button type="submit">Sign In</button>
+              </form>
+            </section>
+
+            </p>
+            <p>
+
+            <button id="sign-out">Sign Out</button>
+
+            </p>
+
+            <div id="messaging">
+            </div>
+
+          </div>
+
+        <div id="after-sign-in">
+
+          <div class="container" id="board">
+
+            <div class="row">
+              <div id="0" class="col-4 box" data-cell-index='0'>
+                <form>
+                  <input name="cell[value]" required type="text" placeholder="x or o">
+                  <button type="submit">Make my move</button>
+                </form>
+              </div>
+              <div id="1" class="col-4 box" data-cell-index='1'>cell 1</div>
+              <div id="2" class="col-4 box" data-cell-index='2'>cell 2</div>
+
+              <div id="3" class="col-4 box" data-cell-index='3'>cell 3</div>
+              <div id="4" class="col-4 box" data-cell-index='4'>cell 4</div>
+              <div id="5" class="col-4 box" data-cell-index='5'>cell 5</div>
+
+              <div id="6" class="col-4 box" data-cell-index='6'>cell 6</div>
+              <div id="7" class="col-4 box" data-cell-index='7'>cell 7</div>
+              <div id="8" class="col-4 box" data-cell-index='8'>cell 8</div>
+            </div>
+
+            <p>
+
+              <button id="new-game">New Game</button>
+
+            </p>
+
+          </div>
+
+        </div>
+
     </body>
 </html>
