@@ -13,5 +13,5 @@ $(() => {
   $('#sign-out').on('click', userEvents.onSignOut)
 
   $('#new-game').on('click', gameEvents.onNewGame)
-  $('#x-move').on('click', gameEvents.onXMove)
+  $('#0').on('submit', gameEvents.onCell0)
 })

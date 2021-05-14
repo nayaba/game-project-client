@@ -13,17 +13,17 @@ const newGame = function () {
   })
 }
 
-const xMove = function () {
+const cell0 = function (cellId, data) {
+  console.log('cellId: ' + cellId + '& data: ' + data)
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/games/:id',
-    headers: {
-      Authorization: `Bearer ${store.user.token}` },
+    headers: { Authorization: `Bearer ${store.user.token}` },
     data: {
       game: {
         cell: {
-          index: 0,
-          value: 'x'
+          index: `${cellId}`,
+          value: `${data}`
         },
         over: false
       }
@@ -33,5 +33,5 @@ const xMove = function () {
 
 module.exports = {
   newGame,
-  xMove
+  cell0
 }
