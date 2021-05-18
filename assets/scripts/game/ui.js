@@ -2,18 +2,137 @@
 
 const store = require('./../store.js')
 
-const newGameSuccess = function (res) {
-  $('#messaging').html(`${res.game}`) // might need to change this to store.game
-  store.game = res.games
-  console.log('store.game' + store.game)
+const startGameSuccess = function (res) {
+  store.game = res.game
+  console.log('res.game', res.game)
+  $('.board').show()
+  $('#messaging').text('')
 }
 
-const onCell0Success = function (response) {
-  // const cell = cells.length.event.target.id
-  console.log('in onCell0Success')
+const startGameFailure = function (error) {
+  $('#messaging').text(error)
+}
+
+// //////////////////////////// Game Play Section ////////////////////////////
+
+const yourMove0Success = function (res) {
+  store.game = res.game
+  $('#0').css('pointer-events', 'none')
+}
+
+const myMove0Success = function (res) {
+  store.game = res.game
+  $('#0').css('pointer-events', 'none')
+}
+
+const yourMove1Success = function (res) {
+  store.game = res.game
+  $('#1').css('pointer-events', 'none')
+}
+
+const myMove1Success = function (res) {
+  store.game = res.game
+  $('#1').css('pointer-events', 'none')
+}
+
+const yourMove2Success = function (res) {
+  store.game = res.game
+  $('#2').css('pointer-events', 'none')
+}
+
+const myMove2Success = function (res) {
+  store.game = res.game
+  $('#2').css('pointer-events', 'none')
+}
+
+const yourMove3Success = function (res) {
+  store.game = res.game
+  $('#3').css('pointer-events', 'none')
+}
+
+const myMove3Success = function (res) {
+  store.game = res.game
+  $('#3').css('pointer-events', 'none')
+}
+
+const yourMove4Success = function (res) {
+  store.game = res.game
+  $('#4').css('pointer-events', 'none')
+}
+
+const myMove4Success = function (res) {
+  store.game = res.game
+  $('#4').css('pointer-events', 'none')
+}
+
+const yourMove5Success = function (res) {
+  store.game = res.game
+  $('#5').css('pointer-events', 'none')
+}
+
+const myMove5Success = function (res) {
+  store.game = res.game
+  $('#5').css('pointer-events', 'none')
+}
+
+const yourMove6Success = function (res) {
+  store.game = res.game
+  $('#6').css('pointer-events', 'none')
+}
+
+const myMove6Success = function (res) {
+  store.game = res.game
+  $('#6').css('pointer-events', 'none')
+}
+
+const yourMove7Success = function (res) {
+  store.game = res.game
+  $('#7').css('pointer-events', 'none')
+}
+
+const myMove7Success = function (res) {
+  store.game = res.game
+  $('#7').css('pointer-events', 'none')
+}
+
+const yourMove8Success = function (res) {
+  store.game = res.game
+  $('#8').css('pointer-events', 'none')
+}
+
+const myMove8Success = function (res) {
+  store.game = res.game
+  $('#8').css('pointer-events', 'none')
+}
+
+// /////////////////////////// End Game Play /////////////////////////////////
+
+const showGameSuccess = function (res) {
+  console.log('in showGameSuccess')
+  console.log('store.game.cells: ', store.game.cells)
+  console.log(res)
 }
 
 module.exports = {
-  newGameSuccess,
-  onCell0Success
+  startGameSuccess,
+  startGameFailure,
+  yourMove0Success,
+  myMove0Success,
+  yourMove1Success,
+  myMove1Success,
+  yourMove2Success,
+  myMove2Success,
+  yourMove3Success,
+  myMove3Success,
+  yourMove4Success,
+  myMove4Success,
+  yourMove5Success,
+  myMove5Success,
+  yourMove6Success,
+  myMove6Success,
+  yourMove7Success,
+  myMove7Success,
+  yourMove8Success,
+  myMove8Success,
+  showGameSuccess
 }
