@@ -2,12 +2,14 @@
 
 const store = require('./../store.js')
 
-const newGameSuccess = function (res) {
+const startGameSuccess = function (res) {
   store.game = res.game
   console.log('res.game', res.game)
+  $('.board').show()
+  $('#messaging').text('')
 }
 
-const newGameFailure = function (error) {
+const startGameFailure = function (error) {
   $('#messaging').text(error)
 }
 
@@ -112,8 +114,8 @@ const showGameSuccess = function (res) {
 }
 
 module.exports = {
-  newGameSuccess,
-  newGameFailure,
+  startGameSuccess,
+  startGameFailure,
   yourMove0Success,
   myMove0Success,
   yourMove1Success,

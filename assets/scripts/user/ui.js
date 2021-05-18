@@ -15,6 +15,8 @@ const signUpFailure = function (err) {
 const signInSuccess = function (res) {
   $('#messaging').text('Welcome ' + res.user.email)
   store.user = res.user
+  $('#after-sign-in').show()
+  $('#before-sign-in').hide()
 }
 
 const signInFailure = function (err) {
@@ -24,6 +26,8 @@ const signInFailure = function (err) {
 
 const signOutSuccess = function () {
   $('#messaging').text('Successfully signed out')
+  $('#before-sign-in').show()
+  $('#after-sign-in').hide()
 }
 
 const signOutFailure = function () {

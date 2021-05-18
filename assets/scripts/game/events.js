@@ -5,15 +5,25 @@ const ui = require('./ui.js')
 const store = require('./../store.js')
 // const getFormFields = require('./../../../lib/get-form-fields.js')
 
-const onNewGame = function (event) {
+const onStartGame = function (event) {
   event.preventDefault()
-  console.log('in onNewGame event.js')
+  console.log('in onStartGame event.js')
 
-  api.newGame()
-    .then(ui.newGameSuccess)
-    .catch(ui.newGameFailure)
+  api.startGame()
+    .then(ui.startGameSuccess)
+    .catch(ui.startGameFailure)
 }
 
+const onANewGame = function (event) {
+  event.preventDefault()
+  $('div.box').text('').css('background-color', 'white')
+  $('div.box').css('pointer-events', 'auto')
+  $('#messaging').text('')
+
+  api.startGame()
+    .then(ui.startGameSuccess)
+    .catch(ui.startGameFailure)
+}
 // //////////////////////////// Game Play Section ////////////////////////////
 
 let currentPlayer = '✕'
@@ -24,22 +34,69 @@ const onBoxClick = (event) => {
   box.css('background', 'transparent').text(currentPlayer)
   currentPlayer = currentPlayer === 'O' ? '✕' : 'O'
 
-  // let i
-  // for (i = 0; i < 8; i++) {
-  //   if (store.game.cells[i] !== '') {
-  //     $('#messaging').text('Game over!')
-  //     console.log('i: ', store.game.cells[i])
-  //   } else {
-  //     $('#messaging').text('')
-  //     console.log('i: ', store.game.cells[i])
-  //   }
-  // }
-
   $('div.box').click(function () {
     const index = $('div.box').index(this)
     console.log('index: ', index)
   })
+
+  // X WINS //////////////////////////////////////////////////////////////////
+  if (store.game.cells[0] === 'x' && store.game.cells[1] === 'x' && store.game.cells[2] === 'x') {
+    $('#messaging').text('X Wins!')
+    $('.board').css('pointer-events', 'none')
+  } else if (store.game.cells[3] === 'x' && store.game.cells[4] === 'x' && store.game.cells[5] === 'x') {
+    $('#messaging').text('X Wins!')
+    $('.board').css('pointer-events', 'none')
+  } else if (store.game.cells[6] === 'x' && store.game.cells[7] === 'x' && store.game.cells[8] === 'x') {
+    $('#messaging').text('X Wins!')
+    $('.board').css('pointer-events', 'none')
+  } else if (store.game.cells[0] === 'x' && store.game.cells[3] === 'x' && store.game.cells[6] === 'x') {
+    $('#messaging').text('X Wins!')
+    $('.board').css('pointer-events', 'none')
+  } else if (store.game.cells[1] === 'x' && store.game.cells[4] === 'x' && store.game.cells[7] === 'x') {
+    $('#messaging').text('X Wins!')
+    $('.board').css('pointer-events', 'none')
+  } else if (store.game.cells[2] === 'x' && store.game.cells[5] === 'x' && store.game.cells[8] === 'x') {
+    $('#messaging').text('X Wins!')
+    $('.board').css('pointer-events', 'none')
+  } else if (store.game.cells[0] === 'x' && store.game.cells[4] === 'x' && store.game.cells[8] === 'x') {
+    $('#messaging').text('X Wins!')
+    $('.board').css('pointer-events', 'none')
+  } else if (store.game.cells[6] === 'x' && store.game.cells[4] === 'x' && store.game.cells[2] === 'x') {
+    $('#messaging').text('X Wins!')
+    $('.board').css('pointer-events', 'none')
+  } else if (store.game.cells[0] === 'o' && store.game.cells[1] === 'o' && store.game.cells[2] === 'o') {
+    $('#messaging').text('O Wins!')
+    $('.board').css('pointer-events', 'none')
+  } else if (store.game.cells[3] === 'o' && store.game.cells[4] === 'o' && store.game.cells[5] === 'o') {
+    $('#messaging').text('O Wins!')
+    $('.board').css('pointer-events', 'none')
+  } else if (store.game.cells[6] === 'o' && store.game.cells[7] === 'o' && store.game.cells[8] === 'o') {
+    $('#messaging').text('O Wins!')
+    $('.board').css('pointer-events', 'none')
+  } else if (store.game.cells[0] === 'o' && store.game.cells[3] === 'o' && store.game.cells[6] === 'o') {
+    $('#messaging').text('O Wins!')
+    $('.board').css('pointer-events', 'none')
+  } else if (store.game.cells[1] === 'o' && store.game.cells[4] === 'o' && store.game.cells[7] === 'o') {
+    $('#messaging').text('O Wins!')
+    $('.board').css('pointer-events', 'none')
+  } else if (store.game.cells[2] === 'o' && store.game.cells[5] === 'o' && store.game.cells[8] === 'o') {
+    $('#messaging').text('O Wins!')
+    $('.board').css('pointer-events', 'none')
+  } else if (store.game.cells[0] === 'o' && store.game.cells[4] === 'o' && store.game.cells[8] === 'o') {
+    $('#messaging').text('O Wins!')
+    $('.board').css('pointer-events', 'none')
+  } else if (store.game.cells[6] === 'o' && store.game.cells[4] === 'o' && store.game.cells[2] === 'o') {
+    $('#messaging').text('O Wins!')
+    $('.board').css('pointer-events', 'none')
+  } else {
+    $('#messaging').text('')
+  }
 }
+
+// else if (store.game.cells.slice(0, 8) === !null) {
+//   $('#messaging').text('Game Over')
+//   $('.board').css('pointer-events', 'none')
+// }
 
 const onYourMove0 = function () {
   event.preventDefault()
@@ -173,7 +230,8 @@ const onShowGame = function () {
 }
 
 module.exports = {
-  onNewGame,
+  onStartGame,
+  onANewGame,
   onBoxClick,
   onYourMove0,
   onYourMove1,

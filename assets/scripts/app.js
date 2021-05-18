@@ -20,14 +20,18 @@ $(() => {
   //   })
   // })
 
+  $('.board').hide()
+  $('#after-sign-in').hide()
+
   $('.box').on('click', gameEvents.onBoxClick)
 
   $('#sign-up').on('submit', userEvents.onSignUp)
   $('#sign-in').on('submit', userEvents.onSignIn)
   $('#sign-out').on('click', userEvents.onSignOut)
 
-  $('#new-game').on('click', gameEvents.onNewGame)
+  $('#start-game').on('click', gameEvents.onStartGame)
   $('#show-game').on('click', gameEvents.onShowGame)
+  $('#anew-game').on('click', gameEvents.onANewGame)
 
   $('#0').on('click', gameEvents.onYourMove0)
   $('#1').on('click', gameEvents.onYourMove1)

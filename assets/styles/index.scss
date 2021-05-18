@@ -52,9 +52,39 @@
   text-shadow: 2px 2px rgba(0, 0, 0, .25); // shadow will be 2px to the right and 2px down; rgba(0,0,0,.25) means that it will be black with an opacity of 25%
 
   &:hover { // changes background color whenever the board is hovered over
-    background-color: LightSkyBlue;
+    background-color: Violet;
   }
 
   user-select: none; // user cannot select our text when clicking on it
 
 } // notice all the & are inside the .box bracket
+
+#messaging {
+  height: 10vh;
+  display: flex;
+  justify-content: center; // centers the board content left to right
+  align-items: center;
+
+  font-size: 5vh;
+}
+
+.buttons {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+#start-game {
+  margin-right: 10px;
+}
+
+#before-sign-in {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+}

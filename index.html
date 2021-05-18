@@ -16,7 +16,7 @@
         <!-- box and alt-color are not bootstrap classes -->
 
 
-        <h1>Tic Tac Taco</h1>
+        <h1>Tic Tac Toe</h1>
 
         <div id="before-sign-in">
 
@@ -41,20 +41,20 @@
               </form>
             </section>
 
-
-
-            <button id="sign-out">Sign Out</button>
-
-
-
-            <div id="messaging">
-            </div>
-
           </div>
+          <div id="messaging"></div>
 
         <div id="after-sign-in">
 
+
           <section class="container">
+
+            <div class="buttons">
+            <button id="start-game">Start Game</button>
+            <button id="sign-out">Sign Out</button>
+            <button id="anew-game">A New Game</button>
+            <!-- <button id="show-game">Show Game Progress</button> -->
+          </div>
 
             <div class="row h-100 board">
               <div id="0" class="col-4 box" data-cell-index='0'></div>
@@ -71,11 +71,10 @@
               <div id="7" class="col-4 box" data-cell-index='7'></div>
               <div id="8" class="col-4 box" data-cell-index='8'></div>
 
+            </div>
+
           </section>
 
-
-              <button id="new-game">New Game</button>
-              <button id="show-game">Show Game Progress</button>
 
 
         </div>
