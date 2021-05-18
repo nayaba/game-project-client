@@ -1,23 +1,60 @@
 @import '~bootstrap/scss/bootstrap';
 
-$alt-color: $cyan;
-$body-bg-color: $gray-200;
-$font-color: $light;
 
-body {
-  background-color: $body-bg-color;
+.container {
+  height: 100vh; // set board container height to 100% of the veiwport's height
+}
+
+.board {
+  margin: auto; // matches the margins on either side of the board
+
+  max-height: calc(100vh - 75px);
+  // take up 100% of the viewport's height minus 75px buffer/margin at the bottom
+  max-width: calc(100vh - 75px);
+  // if max width and max height are the same, it will be perfectly square
+
+  background-color: pink; // set background image on board
+  background-size: cover; // makes sure background takes up 100% of the width
+  background-position: center; // makes sure background image is centered
+  background-repeat: no-repeat; // makes sure the background image does not repeat
+
 }
 
 .box {
-  align-items: center;
-  background-color: $secondary;
-  border: 1px solid $white;
-  color: $font-color;
-  display: flex;
-  height: 80px;
-  justify-content: center;
-}
+// Add a solid black line to the right of each cell so that we have lines between each column
+  border-right: 3px solid black;
+// Add a solid black line to the bottom of each cell so that we have lines between each row
+  border-bottom: 3px solid black;
 
-.alt-color {
-  background-color: $alt-color;
-}
+  // selecting the 3 boxes in the last column; nth-child selects elements based on their position
+  // 3 selects every third childe element (i.e. every 3 box in our row of boxes)
+  // & refers to the .box above (i.e. .box:nth-child)
+  &:nth-child(3n) {
+    border-right: 0;
+  }
+
+  // selects elements by their position, but starting from the end of the row rather than the beginning-1n +
+  &:nth-last-child(-1n + 3) { // to choose the last 3 insert -1n + (number of elements you want to select, i.e. 3)
+    border-bottom: 0;
+  }
+
+  // set the minimum height for each boxes
+  min-height: calc(100% / 3); // each will have a minimum height of 1/3 of the board
+
+  display: flex;
+  justify-content: center; // centers the board content left to right
+  align-items: center; // centers the board content top to bottom
+
+  background-color: white; // covers up the background image
+
+  color: black; // change the text color to white
+  font-size: 15vh; // makes the font 15% of the veiwport height, this way the font can grow with the board
+  text-shadow: 2px 2px rgba(0, 0, 0, .25); // shadow will be 2px to the right and 2px down; rgba(0,0,0,.25) means that it will be black with an opacity of 25%
+
+  &:hover { // changes background color whenever the board is hovered over
+    background-color: LightSkyBlue;
+  }
+
+  user-select: none; // user cannot select our text when clicking on it
+
+} // notice all the & are inside the .box bracket

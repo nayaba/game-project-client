@@ -53,3 +53,61 @@ more than 30 minutes open the issue queue
 daily stand up (are you blocked on anything)
 
 not being collaborative eats into company time.
+
+
+api:
+const cell0 = function (cellId, data) {
+  console.log('in api.js')
+  console.log('store.game._id: ' + `${store.game._id}`)
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/games/' + `${store.game._id}`,
+    headers: { Authorization: `Bearer ${store.user.token}` },
+    data: {
+      game: {
+        cell: {
+          index: `${cellId}`,
+          value: `${data}`
+        },
+        over: false
+      }
+    }
+  })
+}
+
+ui:
+const cell0Success = function (response) {
+  // const cell = cells.length.event.target.id
+  console.log('in onCell0Success')
+}
+
+events:
+const onCell0 = function (event) {
+  event.preventDefault()
+
+  const cellId = event.target.id
+  const data = getFormFields(event.target)
+
+
+
+  api.cell0(cellId, data)
+    .then(ui.cell0Success)
+    .catch()
+  // https://git.generalassemb.ly/ga-wdi-boston/game-project/issues/4165
+}
+
+
+const beth = function (event) {
+  event.preventDefault()
+  const idFromDiv = $(event.target).data('id') // getting id from div for array cell
+
+}
+
+html:
+<form>
+  <input name="cell[value]" required type="text" placeholder="x or o">
+  <button type="submit">Make my move</button>
+</form>
+
+app:
+$('#0').on('submit', gameEvents.onCell0)
