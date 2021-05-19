@@ -3,7 +3,7 @@
 const config = require('./../config.js')
 const store = require('./../store.js')
 
-const startGame = function () {
+const newGame = function () {
   console.log('store.user.token' + `${store.user.token}`)
   return $.ajax({
     method: 'POST',
@@ -391,7 +391,7 @@ const showGame = function () {
 }
 
 module.exports = {
-  startGame,
+  newGame,
   yourMove0,
   myMove0,
   yourMove1,

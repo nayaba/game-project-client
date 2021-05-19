@@ -29,9 +29,9 @@ $(() => {
   $('#sign-in').on('submit', userEvents.onSignIn)
   $('#sign-out').on('click', userEvents.onSignOut)
 
-  $('#start-game').on('click', gameEvents.onStartGame)
+  $('#new-game').on('click', gameEvents.onNewGame)
   $('#show-game').on('click', gameEvents.onShowGame)
-  $('#anew-game').on('click', gameEvents.onANewGame)
+  // $('#anew-game').on('click', gameEvents.onANewGame)
 
   $('#0').on('click', gameEvents.onYourMove0)
   $('#1').on('click', gameEvents.onYourMove1)

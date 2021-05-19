@@ -2,14 +2,14 @@
 
 const store = require('./../store.js')
 
-const startGameSuccess = function (res) {
+const newGameSuccess = function (res) {
   store.game = res.game
   console.log('res.game', res.game)
   $('.board').show()
   $('#messaging').text('')
 }
 
-const startGameFailure = function (error) {
+const newGameFailure = function (error) {
   $('#messaging').text(error)
 }
 
@@ -17,91 +17,109 @@ const startGameFailure = function (error) {
 
 const yourMove0Success = function (res) {
   store.game = res.game
+  checkForWin()
   $('#0').css('pointer-events', 'none')
 }
 
 const myMove0Success = function (res) {
   store.game = res.game
+  checkForWin()
   $('#0').css('pointer-events', 'none')
 }
 
 const yourMove1Success = function (res) {
   store.game = res.game
+  checkForWin()
   $('#1').css('pointer-events', 'none')
 }
 
 const myMove1Success = function (res) {
   store.game = res.game
+  checkForWin()
   $('#1').css('pointer-events', 'none')
 }
 
 const yourMove2Success = function (res) {
   store.game = res.game
+  checkForWin()
   $('#2').css('pointer-events', 'none')
 }
 
 const myMove2Success = function (res) {
   store.game = res.game
+  checkForWin()
   $('#2').css('pointer-events', 'none')
 }
 
 const yourMove3Success = function (res) {
   store.game = res.game
+  checkForWin()
   $('#3').css('pointer-events', 'none')
 }
 
 const myMove3Success = function (res) {
   store.game = res.game
+  checkForWin()
   $('#3').css('pointer-events', 'none')
 }
 
 const yourMove4Success = function (res) {
   store.game = res.game
+  checkForWin()
   $('#4').css('pointer-events', 'none')
 }
 
 const myMove4Success = function (res) {
   store.game = res.game
+  checkForWin()
   $('#4').css('pointer-events', 'none')
 }
 
 const yourMove5Success = function (res) {
   store.game = res.game
+  checkForWin()
   $('#5').css('pointer-events', 'none')
 }
 
 const myMove5Success = function (res) {
   store.game = res.game
+  checkForWin()
   $('#5').css('pointer-events', 'none')
 }
 
 const yourMove6Success = function (res) {
   store.game = res.game
+  checkForWin()
   $('#6').css('pointer-events', 'none')
 }
 
 const myMove6Success = function (res) {
   store.game = res.game
+  checkForWin()
   $('#6').css('pointer-events', 'none')
 }
 
 const yourMove7Success = function (res) {
   store.game = res.game
+  checkForWin()
   $('#7').css('pointer-events', 'none')
 }
 
 const myMove7Success = function (res) {
   store.game = res.game
+  checkForWin()
   $('#7').css('pointer-events', 'none')
 }
 
 const yourMove8Success = function (res) {
   store.game = res.game
+  checkForWin()
   $('#8').css('pointer-events', 'none')
 }
 
 const myMove8Success = function (res) {
   store.game = res.game
+  checkForWin()
   $('#8').css('pointer-events', 'none')
 }
 
@@ -113,9 +131,67 @@ const showGameSuccess = function (res) {
   console.log(res)
 }
 
+const checkForWin = function () {
+  // X WINS //////////////////////////////////////////////////////////////////
+  if (store.game.cells[0] === 'x' && store.game.cells[1] === 'x' && store.game.cells[2] === 'x') {
+    $('#messaging').text('X Wins!')
+    $('.box').css('pointer-events', 'none')
+  } else if (store.game.cells[3] === 'x' && store.game.cells[4] === 'x' && store.game.cells[5] === 'x') {
+    $('#messaging').text('X Wins!')
+    $('.box').css('pointer-events', 'none')
+  } else if (store.game.cells[6] === 'x' && store.game.cells[7] === 'x' && store.game.cells[8] === 'x') {
+    $('#messaging').text('X Wins!')
+    $('.box').css('pointer-events', 'none')
+  } else if (store.game.cells[0] === 'x' && store.game.cells[3] === 'x' && store.game.cells[6] === 'x') {
+    $('#messaging').text('X Wins!')
+    $('.box').css('pointer-events', 'none')
+  } else if (store.game.cells[1] === 'x' && store.game.cells[4] === 'x' && store.game.cells[7] === 'x') {
+    $('#messaging').text('X Wins!')
+    $('.box').css('pointer-events', 'none')
+  } else if (store.game.cells[2] === 'x' && store.game.cells[5] === 'x' && store.game.cells[8] === 'x') {
+    $('#messaging').text('X Wins!')
+    $('.box').css('pointer-events', 'none')
+  } else if (store.game.cells[0] === 'x' && store.game.cells[4] === 'x' && store.game.cells[8] === 'x') {
+    $('#messaging').text('X Wins!')
+    $('.box').css('pointer-events', 'none')
+  } else if (store.game.cells[6] === 'x' && store.game.cells[4] === 'x' && store.game.cells[2] === 'x') {
+    $('#messaging').text('X Wins!')
+    $('.box').css('pointer-events', 'none')
+  } else if (store.game.cells[0] === 'o' && store.game.cells[1] === 'o' && store.game.cells[2] === 'o') {
+    $('#messaging').text('O Wins!')
+    $('.box').css('pointer-events', 'none')
+  } else if (store.game.cells[3] === 'o' && store.game.cells[4] === 'o' && store.game.cells[5] === 'o') {
+    $('#messaging').text('O Wins!')
+    $('.box').css('pointer-events', 'none')
+  } else if (store.game.cells[6] === 'o' && store.game.cells[7] === 'o' && store.game.cells[8] === 'o') {
+    $('#messaging').text('O Wins!')
+    $('.box').css('pointer-events', 'none')
+  } else if (store.game.cells[0] === 'o' && store.game.cells[3] === 'o' && store.game.cells[6] === 'o') {
+    $('#messaging').text('O Wins!')
+    $('.box').css('pointer-events', 'none')
+  } else if (store.game.cells[1] === 'o' && store.game.cells[4] === 'o' && store.game.cells[7] === 'o') {
+    $('#messaging').text('O Wins!')
+    $('.box').css('pointer-events', 'none')
+  } else if (store.game.cells[2] === 'o' && store.game.cells[5] === 'o' && store.game.cells[8] === 'o') {
+    $('#messaging').text('O Wins!')
+    $('.box').css('pointer-events', 'none')
+  } else if (store.game.cells[0] === 'o' && store.game.cells[4] === 'o' && store.game.cells[8] === 'o') {
+    $('#messaging').text('O Wins!')
+    $('.box').css('pointer-events', 'none')
+  } else if (store.game.cells[6] === 'o' && store.game.cells[4] === 'o' && store.game.cells[2] === 'o') {
+    $('#messaging').text('O Wins!')
+    $('.box').css('pointer-events', 'none')
+  // } else if (store.game.cells.slice(0, 8) === !null) {
+  //   $('#messaging').text('Game Over')
+  //   $('.board').css('pointer-events', 'none')
+  } else {
+    $('#messaging').text('')
+  }
+}
+
 module.exports = {
-  startGameSuccess,
-  startGameFailure,
+  newGameSuccess,
+  newGameFailure,
   yourMove0Success,
   myMove0Success,
   yourMove1Success,
