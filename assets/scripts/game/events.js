@@ -39,10 +39,21 @@ const onBoxClick = (event) => {
     console.log('index: ', index)
   })
 
+  // $( `${store.game.cells}` ).each(function() {
+  //     if ( this.game.cells === true ) {
+  //       $('#messaging').text('Draw')
+  //       $('.board').css('pointer-events', 'none')
+  //     } else {
+  //       return false
+  //     }
+
+
   // X WINS //////////////////////////////////////////////////////////////////
+
   if (store.game.cells[0] === 'x' && store.game.cells[1] === 'x' && store.game.cells[2] === 'x') {
     $('#messaging').text('X Wins!')
     $('.board').css('pointer-events', 'none')
+    // $(`${store.game.cells}`).each(console.log())
   } else if (store.game.cells[3] === 'x' && store.game.cells[4] === 'x' && store.game.cells[5] === 'x') {
     $('#messaging').text('X Wins!')
     $('.board').css('pointer-events', 'none')
@@ -88,15 +99,13 @@ const onBoxClick = (event) => {
   } else if (store.game.cells[6] === 'o' && store.game.cells[4] === 'o' && store.game.cells[2] === 'o') {
     $('#messaging').text('O Wins!')
     $('.board').css('pointer-events', 'none')
+  // } else if (store.game.cells.forEach() !== '') {
+  //   $('#messaging').text('Game Over')
+  //   $('.board').css('pointer-events', 'none')
   } else {
     $('#messaging').text('')
   }
 }
-
-// else if (store.game.cells.slice(0, 8) === !null) {
-//   $('#messaging').text('Game Over')
-//   $('.board').css('pointer-events', 'none')
-// }
 
 const onYourMove0 = function () {
   event.preventDefault()
