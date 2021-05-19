@@ -1,8 +1,18 @@
+## Tic Tac Toe: A Game for Two
+
+This application allows the user to play a game of tic tac toe with theirself or a friend after sign-up and sign-in.
+
+### Important Links
+
+https://nayaba.github.io/game-project-client/
+
 ### Wireframe
 
 ![tic tac toe wireframe](https://i.imgur.com/sBlLhbX.png)
 
-### User Stories
+### Planning
+
+#### User Stories
 
 - As a player, I want to be able to save my gameplay so that I can leave and pick back up in the same game.
 
@@ -15,22 +25,3 @@
 - As a visitor, I want the sign-up process to be quick so I can begin playing as soon as possible.
 
 - As a member, I want to keep a record of my wins and losses so I can view my record.
-
-### Plan
-
-** Day 1 **
- User sign up (POST /sign-up)
- User sign in (POST /sign-in)
- User sign out (DELETE /sign-out)
- User starts a tic tac toe game (POST /games)
-
-** Day 2 **
- Game Play (PATCH /games/:id)
-
-** Day 3 **
- UI (html, css, etc.)
- Bootstrap
-  -modal (if time permits)
-
-** Day 4 **
- Debug
