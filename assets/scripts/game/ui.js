@@ -181,9 +181,9 @@ const checkForWin = function () {
   } else if (store.game.cells[6] === 'o' && store.game.cells[4] === 'o' && store.game.cells[2] === 'o') {
     $('#messaging').text('O Wins!')
     $('.box').css('pointer-events', 'none')
-  // } else if (store.game.cells.slice(0, 8) === !null) {
-  //   $('#messaging').text('Game Over')
-  //   $('.board').css('pointer-events', 'none')
+  } else if (store.game.cells[0] != '' && store.game.cells[1] != '' && store.game.cells[2] != '' && store.game.cells[3] != '' && store.game.cells[4] != '' && store.game.cells[5] != '' && store.game.cells[6] != '' && store.game.cells[7] != '' && store.game.cells[8] != '') {
+    $('#messaging').text('Draw')
+    $('.board').css('pointer-events', 'none')
   } else {
     $('#messaging').text('')
   }
