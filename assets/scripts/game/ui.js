@@ -222,5 +222,5 @@ module.exports = {
   myMove7Success,
   yourMove8Success,
   myMove8Success,
-  showGameSuccess,
+  showGameSuccess
 }
