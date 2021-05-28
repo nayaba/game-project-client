@@ -2,7 +2,8 @@
 
 const api = require('./api')
 const ui = require('./ui.js')
-const store = require('./../store.js')
+
+let currentPlayer
 // const getFormFields = require('./../../../lib/get-form-fields.js')
 
 // const onStartGame = function (event) {
@@ -19,6 +20,7 @@ const onNewGame = function (event) {
   $('.box').text('').css('background-color', 'white')
   $('.box').css('pointer-events', 'auto')
   $('#messaging').text('')
+  currentPlayer = '✕'
 
   api.newGame()
     .then(ui.newGameSuccess)
@@ -26,11 +28,9 @@ const onNewGame = function (event) {
 }
 // //////////////////////////// Game Play Section ////////////////////////////
 
-let currentPlayer = '✕'
-
 const onBoxClick = (event) => {
   const box = $(event.target)
-  console.log(event.target)
+  // console.log(event.target)
   box.css('background', 'transparent').text(currentPlayer)
   currentPlayer = currentPlayer === 'O' ? '✕' : 'O'
 
@@ -39,7 +39,6 @@ const onBoxClick = (event) => {
     console.log('index: ', index)
   })
 }
-
 
 
 const onYourMove0 = function () {
@@ -165,6 +164,7 @@ const onYourMove8 = function () {
       .then(ui.myMove8Success)
   }
 }
+
 
 // /////////////////////////// End Game Play /////////////////////////////////
 

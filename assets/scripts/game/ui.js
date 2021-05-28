@@ -2,6 +2,7 @@
 
 const store = require('./../store.js')
 
+
 const newGameSuccess = function (res) {
   store.game = res.game
   console.log('res.game', res.game)
@@ -15,10 +16,13 @@ const newGameFailure = function (error) {
 
 // //////////////////////////// Game Play Section ////////////////////////////
 
+
+
 const yourMove0Success = function (res) {
   store.game = res.game
   checkForWin()
   $('#0').css('pointer-events', 'none')
+
 }
 
 const myMove0Success = function (res) {
@@ -31,6 +35,7 @@ const yourMove1Success = function (res) {
   store.game = res.game
   checkForWin()
   $('#1').css('pointer-events', 'none')
+  currentPlayer = '✕'
 }
 
 const myMove1Success = function (res) {
@@ -43,6 +48,7 @@ const yourMove2Success = function (res) {
   store.game = res.game
   checkForWin()
   $('#2').css('pointer-events', 'none')
+  currentPlayer = '✕'
 }
 
 const myMove2Success = function (res) {
@@ -55,6 +61,7 @@ const yourMove3Success = function (res) {
   store.game = res.game
   checkForWin()
   $('#3').css('pointer-events', 'none')
+  currentPlayer = '✕'
 }
 
 const myMove3Success = function (res) {
@@ -67,6 +74,7 @@ const yourMove4Success = function (res) {
   store.game = res.game
   checkForWin()
   $('#4').css('pointer-events', 'none')
+  currentPlayer = '✕'
 }
 
 const myMove4Success = function (res) {
@@ -79,6 +87,7 @@ const yourMove5Success = function (res) {
   store.game = res.game
   checkForWin()
   $('#5').css('pointer-events', 'none')
+  currentPlayer = '✕'
 }
 
 const myMove5Success = function (res) {
@@ -91,6 +100,7 @@ const yourMove6Success = function (res) {
   store.game = res.game
   checkForWin()
   $('#6').css('pointer-events', 'none')
+  currentPlayer = '✕'
 }
 
 const myMove6Success = function (res) {
@@ -103,6 +113,7 @@ const yourMove7Success = function (res) {
   store.game = res.game
   checkForWin()
   $('#7').css('pointer-events', 'none')
+  currentPlayer = '✕'
 }
 
 const myMove7Success = function (res) {
@@ -115,6 +126,7 @@ const yourMove8Success = function (res) {
   store.game = res.game
   checkForWin()
   $('#8').css('pointer-events', 'none')
+  currentPlayer = '✕'
 }
 
 const myMove8Success = function (res) {
@@ -210,5 +222,5 @@ module.exports = {
   myMove7Success,
   yourMove8Success,
   myMove8Success,
-  showGameSuccess
+  showGameSuccess,
 }
