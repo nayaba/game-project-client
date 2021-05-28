@@ -29,6 +29,9 @@ const signOutSuccess = function () {
   $('#messaging').text('Successfully signed out')
   $('#before-sign-in').show()
   $('#after-sign-in').hide()
+  $('.box').text('').css('background-color', 'white')
+  $('.board').hide()
+  $('form').trigger('reset')
 }
 
 const signOutFailure = function () {
